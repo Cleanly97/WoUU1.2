@@ -176,4 +176,11 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
+
+    /**
+     * The entry point of the program.
+     */
+    public static void main(String[] args) {
+        new Game().play();
+    }
 }

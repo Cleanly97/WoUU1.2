@@ -33,6 +33,8 @@ public class Room
         exits = new HashMap<>();
     }
 
+    //Testing the testing
+
     /**
      * Define an exit from this room.
      * @param direction The direction of the exit.

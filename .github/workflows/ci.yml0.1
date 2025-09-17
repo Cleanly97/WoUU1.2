@@ -1,0 +1,33 @@
+name: Java CI - JUnit 5
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Klona projektet
+      uses: actions/checkout@v3
+
+    - name: Installera Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Kompilera Java-koden
+      run: javac -d out $(find src -name "*.java")
+
+    - name: Köra tester med JUnit 5
+      run: |
+        mkdir -p out/test
+        javac -cp "libs/*:out" -d out/test $(find src -name "*Test.java")
+        java -jar libs/junit-platform-console-standalone-1.10.0.jar \
+          --class-path out:test:out \
+          --scan-class-path

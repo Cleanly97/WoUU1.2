@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import se.uu.game.Room;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="WoUU1.2" />
+        <module name="wouu-game" />
       </profile>
     </annotationProcessing>
   </component>

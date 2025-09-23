@@ -1,3 +1,5 @@
+package se.uu.game;
+
 /**
  *  This class is the main class of the "World of Uppsala University" application.
  *
@@ -31,7 +33,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, classroom, pub, lab, office;
+        Room outside, classroom, pub, lab, office, library;
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -39,6 +41,8 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the teachers office");
+        library = new Room("in the quiet university library");
+
 
         // initialise room exits
         outside.setExit("east", classroom);
@@ -51,8 +55,11 @@ public class Game
 
         lab.setExit("north", outside);
         lab.setExit("east", office);
+        lab.setExit("south", library);
 
         office.setExit("west", lab);
+
+        library.setExit("north", lab);
 
         currentRoom = outside;  // start game outside
     }

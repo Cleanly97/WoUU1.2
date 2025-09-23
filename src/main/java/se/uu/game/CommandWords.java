@@ -1,3 +1,5 @@
+package se.uu.game;
+
 import java.util.HashMap;
 
 /**

@@ -1,3 +1,8 @@
+package se.uu.game;
+
+import se.uu.game.Parser;
+
+
 import java.util.Scanner;
 
 /**

@@ -1,3 +1,7 @@
+package se.uu.game;
+
+import se.uu.game.CommandWord;
+
 /**
  * This class is part of the "World of Uppsala University" application.
  * "World of Uppsala University" is a very simple, text based adventure game.

@@ -1,0 +1,27 @@
+name: Java CI with Maven
+
+on:
+  push:        # körs vid varje push
+    branches: [ main ]   # eller master/TestMaster beroende på din branch
+  pull_request:          # körs vid varje PR
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Hämta koden
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # 2. Installera rätt JDK
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'      # samma som i din pom.xml
+          distribution: 'temurin' # rekommenderad distribution
+
+      # 3. Bygg och kör enhetstester
+      - name: Build & Test with Maven
+        run: mvn -B clean test

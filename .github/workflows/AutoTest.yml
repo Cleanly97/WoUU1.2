@@ -2,9 +2,9 @@ name: Java CI with Maven
 
 on:
   push:        # körs vid varje push
-    branches: [ main ]   # eller master/TestMaster beroende på din branch
+    branches: [ master ]   # eller master/TestMaster beroende på din branch
   pull_request:          # körs vid varje PR
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
